@@ -18,4 +18,4 @@ RUN wget "https://downloads.sourceforge.net/project/gdcm/gdcm%202.x/GDCM%202.6.1
 
 #RUN cd build_files && make install
 RUN cd build_files && cp bin/*gdcm*py bin/_gdcmswig.so /usr/local/lib/python2.7/dist-packages/
-ENV PATH "$PATH:build_files/bin"
+ENV PATH "$PATH:/root/build_files/bin"
