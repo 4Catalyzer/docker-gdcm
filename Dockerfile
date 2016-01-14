@@ -17,6 +17,7 @@ RUN wget "https://downloads.sourceforge.net/project/gdcm/gdcm%202.x/GDCM%20${GDC
  && cmake -DGDCM_BUILD_SHARED_LIBS=ON -DGDCM_BUILD_APPLICATIONS=ON -DGDCM_INSTALL_PYTHONMODULE_DIR='/usr/local/lib/python2.7/dist-packages/' -DGDCM_WRAP_PYTHON=ON ../gdcm-${GDCM_VERSION} \
  && make
 
-#RUN cd build_files && make install
-RUN cd build_files && cp bin/*gdcm*py bin/_gdcmswig.so /usr/local/lib/python2.7/dist-packages/
-ENV PATH "$PATH:/root/build_files/bin"
+RUN cd build_files \
+ && make install
+
+ENV LD_LIBRARY_PATH "/usr/local/lib:$LD_LIBRARY_PATH"
