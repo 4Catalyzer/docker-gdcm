@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /root
 
-ENV GDCM_VERSION 2.6.2
+ENV GDCM_VERSION 2.6.3
 RUN wget "https://downloads.sourceforge.net/project/gdcm/gdcm%202.x/GDCM%20${GDCM_VERSION}/gdcm-${GDCM_VERSION}.tar.bz2" \
  && tar xvf gdcm-${GDCM_VERSION}.tar.bz2 \
  && rm gdcm-${GDCM_VERSION}.tar.bz2 \
